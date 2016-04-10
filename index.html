@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Cátedra Cosgaya - Aplicación - Sensibilización a la forma y al ritmo</title>
+<meta name="description" content="Trabajo práctico de sensibilización a la forma y al ritmo.">
+<link rel="shortcut icon" href="iconos/favicon.ico">
+<link rel="shortcut icon" sizes="196x196" href="iconos/favicon-196x196.png">
+<link rel="apple-touch-icon" href="iconos/apple-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" href="iconos/apple-touch-icon-precomposed.png">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/colorbox.css">
+<link rel="stylesheet" href="css/bootstrap.tooltip.css">
+<link rel="stylesheet" href="css/estilos.css">
+<script src="js/vendor/modernizr.min.js"></script>
+</head>
+
+<body>
+
+
+<div id="hoja">
+	<div class="grupo"></div>
+
+	<div class="figura circulo original solo" data-rotacion="0"><span><svg width="66px" height="66px" viewBox="0 0 66 66"><circle class="objeto" cx="33" cy="33" r="33"></circle></svg></span></div>
+	<div class="figura cuadrado original solo" data-rotacion="0"><span><svg width="60px" height="60px" viewBox="0 0 60 60"><rect class="objeto" cx="33" x="0" y="0" width="60" height="60"></rect></svg></span></div>
+	<div class="figura triangulo original solo" data-rotacion="0"><span><svg width="76px" height="65.82px" viewBox="0 0 76 65.82"><polygon class="objeto" points="76,65.82 38.001,0 0,65.82"></polygon></svg></span></div>
+	
+	<div id="menu">
+		<nav>
+			<ul>
+				<li id="deshacer"><a href="#" data-toggle="tooltip" data-placement="bottom" title="(Ctrl+Z)">Deshacer</a></li>
+				<li id="agrupar"><a href="#" data-toggle="tooltip" data-placement="bottom" title="(Shift+Clic)">Agrupar</a></li>
+				<li id="generarpdf"><a href="#">Generar PDF</a></li>
+				<li id="submenu">
+					<span>Menú</span>
+					<ul>
+						<li id="trabajopractico"><a href="#trabajopractico_ventana" class="trabajopractico_accion">Trabajo práctico</a></li>
+						<li id="reiniciar"><a href="#reiniciar_ventana" class="reinicio_accion">Reiniciar</a></li>
+ 												<li id="info"><a href="#info_ventana" class="info_accion">Información</a></li>	
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+	<div id="pie">Cátedra Cosgaya | Aplicación | Sensibilización a la forma y al ritmo | Año 2016</div>
+</div>
+
+
+
+<form action="pdf.php" method="post" id="formulario">
+	<input id="informacion" name="informacion" type="hidden" value=""/>
+</form>
+
+
+
+<div class="hidden">
+	<div id="trabajopractico_ventana" class="ventana">
+		<h2>Trabajo práctico</h2>
+
+		<h3>Objetivos</h3>
+		<p>Desarrollar el sentido del ritmo a través del reconocimiento del espacio óptimo entre figuras y entre líneas.</p>
+		<p>Tomar conciencia sobre relaciones espaciales y formales complejas, reconociendo la contraforma como elemento activo.</p>
+		<p>Agudizar la percepción para alinear ópticamente figuras de distinta forma.</p>
+		<p>Generar un bloque de figuras que, por su relación espacial, posea un color homogéneo.</p>
+		<p>Analizar la problemática del espacio y la composición de la página teniendo en cuenta la caja virtual formada por el bloque de figuras.</p>
+
+		<h3>Ejercitación</h3>
+		<p>Moviendo las figuras se conformarán, como mínimo, 4 líneas horizontales de izquierda a derecha y de arriba hacia abajo.</p>
+		<p>Son condiciones de este trabajo intercalar las distintas figuras y posicionarlas en líneas sin ningún orden de sucesión.</p>
+		<p>Esta alineación se ajustará teniendo en cuenta la problemática del espacio uniforme entre figuras y el ajuste a una línea de apoyo virtual. Podrá resolverse moviendo las figuras en cualquier dirección, para ser visualizadas como líneas horizontales pertenecientes a una misma caja virtual.</p>
+		<p>Se generará un archivo PDF tamaño A3 para su impresión.</p>
+		<p>Se incluirán en el dorso de la página la página los siguientes datos: Nombre y apellido del alumno, nombres y apellidos de los docentes de la comisión.</p>
+
+		<h3>Consejos</h3>
+		<p>Proyectar márgenes mayores a la interlínea y la interfigura, para que estas no le compitan.</p>
+		<p>Identificar el par que, por la forma de cada figura, genere la relación más compleja («par crítico») para poder decidir el color de bloque a utilizar.</p>
+		<p>Respetar las proporciones espaciales entre la interfigura y la interlínea.</p>
+		<p>Evitar colocar más de 2 figuras iguales seguidas en la misma línea.</p>
+		<p>Una vez impreso el trabajo, verificar que los márgenes sean los buscados. No dejar que la impresión encaje el archivo en el área de impresión porque eso ampliará los márgenes y achicará las figuras.</p>
+		<p>Con el impreso a distancia prudente (al menos 50 cm) entrecerrar los ojos y observar el color del bloque. Tiene que ser homogéneo. Si lo que se ve no es el resultado buscado, volver a intentarlo, imprimir y repetir la operación.</p>
+	</div>
+
+	<div id="reiniciar_ventana" class="ventana">
+		<h2>Atención</h2>
+		<p>¿Quiere reiniciar la posición y rotación de todas las figuras?</p>
+		<div class="botonera">
+			<div id="reiniciar_aceptar" class="boton boton_rojo">Reiniciar</div>
+			<div id="reiniciar_cancelar" class="boton">Cancelar</div>
+		</div>
+	</div>
+
+	<div id="info_ventana" class="ventana">
+		<h2>Información</h2>
+
+		<article class="info-introduccion">
+			<p><strong>Versión actual:</strong> 2.5.0 - (04/04/2016)</p>
+			<p><strong>Elaboración ejercicio:</strong> Cuerpo docente de la Cátedra Cosgaya.</p>
+			<p><strong>Desarrollo versión 2014:</strong> Alejandro Sánchez Menéndez</p>
+			<p><strong>Desarrollo versión 2002:</strong> Leonardo Spinetto</p>
+			<p><strong>Agradecimientos:</strong> Pablo Cosgaya, Natalia Fernández, Alvaro Ghisolfo, Marcela Romero, Leonardo Spinetto y a todo el cuerpo docente de la Cátedra.</p>
+		</article>
+
+		<article class="info-licencia">
+			<h3>Licencia de la aplicación</h3>
+			<p><a href="LICENSE.md" target="_blank">Está aplicación está disponible bajo la licencia MIT - <span class="sincorte">Copyright (c) 2014-2016 Cátedra Cosgaya.</span></a></p>
+
+			<h3>Licencia del trabajo práctico</h3>
+			<p><a href="http://creativecommons.org/licenses/by-sa/4.0/deed.es" target="_blank">Esta obra está bajo una licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional.</a></p>
+
+			<h3>Repositorio GitHub</h3>
+			<p><a href="https://github.com/catedracosgaya/espaciado-figuras" target="_blank">https://github.com/catedracosgaya/espaciado-figuras</a></p>
+		</article>
+		
+		<article class="info-contacto">
+			<h3>Contacto</h3>
+			<p>Email: <a href="mailto:contactenos@catedracosgaya.com.ar">contactenos@catedracosgaya.com.ar</a></p>
+			<p>Web: <a href="http://www.catedracosgaya.com.ar/" target="_blank">www.catedracosgaya.com.ar</a></p>
+			<p>Facebook: <a href="http://www.facebook.com/catedracosgaya" target="_blank">facebook.com/catedracosgaya</a></p>
+			<p>Twitter: <a href="http://www.twitter.com/catedracosgaya" target="_blank">twitter.com/catedracosgaya</a></p>
+		</article>
+
+		<article class="info-recursos">
+			<h3>Recursos utilizados</h3>
+			<p>Fuentes: <a href="http://www.omnibus-type.com/fonts/rosario.php" target="_blank">Rosario</a> y <a href="http://mfglabs.github.io/mfglabs-iconset/" target="_blank">MFG Labs icon set</a></p>
+			<p class="enlaces"><a href="http://jqueryui.com/" target="_blank">jQuery UI</a>, <a href="https://github.com/carhartl/jquery-cookie" target="_blank">jQuery Cookie Plugin</a>, <a href="http://touchpunch.furf.com/" target="_blank">jQuery UI Touch Punch</a>, <a href="http://html5boilerplate.com/" target="_blank">HTML5 Boilerplate</a>, <a href="https://github.com/dompdf/dompdf" target="_blank">dompdf</a>, <a href="http://www.jacklmoore.com/colorbox/" target="_blank">Colorbox</a>, <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></p>
+		</article>
+
+		<article class="info-legales">
+			<h3>Política de cookies y estadísticas</h3>
+			<p>Utilizamos cookies y/o Local Storage para guardar la configuración de la hoja de trabajo.</p>
+			<p>Utilizamos Google Analytics para llevar las estadísticas de visitas y para medir la utilización de las herramientas de la aplicación.</p>
+		</article>
+	</div>
+</div>
+
+
+
+
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/jquery.ui.core.min.js"></script>
+<script src="js/jquery.ui.widget.min.js"></script>
+<script src="js/jquery.ui.mouse.min.js"></script>
+<script src="js/jquery.ui.draggable.min.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/jquery.colorbox.min.js"></script>
+<script src="js/bootstrap.tooltip.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+@page{
+    margin:0;
+}
+
+body{
+    background-color: cmyk(0,0,0,0);
+}
+
+
+
+/* ---------------------------------------------- */
+/* Coeficiente x 1.5874 ------------------------- */
+/* ---------------------------------------------- */
+.figura{
+    display:block;
+    height:180.9636px;
+    line-height:120.6424px;
+    position:absolute;
+    text-align:center;
+    width:180.9636px;
+    z-index:1;
+}
+.figura .svg{
+    background-color: cmyk(0,0,0,0.6);
+    display:inline-block;
+    text-align:center;
+}
+.circulo .svg{
+    -webkit-border-radius:52px;
+    -moz-border-radius:52px;
+    border-radius:52px;
+    height:104.7684px;
+    margin-left:46px;
+    margin-top:35px;
+    width:104.7684px;
+}
+.cuadrado .svg{
+    height:95.244px;
+    margin-left:49.5px;
+    margin-top:39.5px;
+    width:95.244px;
+}
+.triangulo .svg{
+    background:none;
+    border-bottom: 104.4804205px solid cmyk(0,0,0,0.6);
+    border-left: 60.32114744px solid transparent;
+    border-right: 60.32114744px solid transparent;
+    height:0;
+    margin-left:35.4px;
+    margin-top:36.274px;
+    width:0;
+}
+
+
+
+/* Rotulo --------------------------------------- */
+#rotulo{
+    bottom:0.8cm;
+    color: cmyk(0,0,0,0.8);
+    display:block;
+    position:absolute;
+    right:0.8cm;
+    text-align:right;
+    width:100%;
+}

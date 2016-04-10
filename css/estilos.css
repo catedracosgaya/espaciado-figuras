@@ -1,0 +1,486 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+
+@font-face {
+    font-family: 'Rosario';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Rosario Regular'), local('Rosario-Regular'), url(../fonts/Rosario-Regular.woff2) format('woff2'), url(../fonts/Rosario-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'Rosario';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Rosario Bold'), local('Rosario-Bold'), url(../fonts/Rosario-Bold.woff2) format('woff2'), url(../fonts/Rosario-Bold.woff) format('woff');
+}
+@font-face {
+    font-family: 'Rosario';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Rosario Italic'), local('Rosario-Italic'), url(../fonts/Rosario-Italic.woff2) format('woff2'), url(../fonts/Rosario-Italic.woff) format('woff');
+}
+@font-face {
+    font-family: 'Rosario';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Rosario Bold Italic'), local('Rosario-BoldItalic'), url(../fonts/Rosario-BoldItalic.woff2) format('woff2'), url(../fonts/Rosario-BoldItalic.woff) format('woff');
+}
+
+
+
+
+html {
+    color: #000000;
+    font-family: 'Rosario', sans-serif;
+    font-size: 1em;
+    line-height: 1.3;
+    -webkit-font-smoothing:antialiased;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+audio,
+canvas,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+textarea {
+    resize: vertical;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+a,
+a:active,
+a:hover,
+a:focus{
+    outline:none;
+}
+
+
+html, body{
+    height:100%;
+}
+body{
+    background-color:#999999;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#hoja{
+    background-color:#FFFFFF;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,0.6);
+    box-shadow: 0 0 5px rgba(0,0,0,0.6);
+    display:block;
+    height:708px;
+    margin:0 auto;
+    overflow:hidden;
+    position:relative;
+    width:1000px;
+}
+
+.figura{
+    bottom:0;
+    display:block;
+    height:114px;
+    line-height:76px;
+    pointer-events:none;
+    position:absolute;
+    right:0;
+    text-align:center;
+    width:114px;
+    z-index: 1;
+}
+
+.figura span{
+    display:inline-block;
+    height:80px;
+    pointer-events:none;
+    position:relative;
+    text-align:center;
+    top:17px;
+    width:80px;
+}
+
+.figura svg{
+    display:inline-block;
+    fill:#808080;
+    -webkit-filter: blur(0.01px);
+    -moz-filter: blur(0.01px);
+    -ms-filter: blur(0.01px);
+    -o-filter: blur(0.01px);
+    filter: blur(0.01px);
+    shape-rendering:geometricPrecision;
+    vertical-align: middle;
+}
+
+.SO_Mac .figura svg, 
+.SO_iOS .figura svg{
+    -webkit-filter: none;
+    -moz-filter: none;
+    -ms-filter: none;
+    -o-filter: none;
+    filter: none;
+}
+
+.figura svg .objeto{
+    pointer-events:auto;
+    -webkit-transition: fill .2s ease-in-out;
+    -moz-transition: fill .2s ease-in-out;
+    -ms-transition: fill .2s ease-in-out;
+    -o-transition: fill .2s ease-in-out;
+    transition: fill .2s ease-in-out;
+}
+.figura svg .objeto:hover{
+    fill:#444444;
+}
+
+.figura svg .objeto, .grupo-icono{
+    cursor: move;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    cursor: grab;
+}
+.figura svg .objeto:active, .grupo-icono:active{
+    cursor: move;
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    cursor: grabbing;
+}
+
+.navegador_IE .figura,
+.navegador_IE .figura span{
+    pointer-events:auto;
+}
+
+
+/* Grupo -------------------------------------------------------------------- */
+.grupo{
+    display:block;
+    height:100%;
+    left:0;
+    top:0;
+    width:100%;
+}
+.grupo-icono{
+    display:block;
+    height:14px;
+    left:calc(50% - 7px);
+    pointer-events:none;
+    position:absolute;
+    top:calc(50% - 7px);
+    width:14px;
+}
+
+
+
+
+/* Menu --------------------------------------------------------------------- */
+#menu{
+    display:block;
+    left:0;
+    position:absolute;
+    text-align:right;
+    top:0;
+    width:100%;
+}
+#menu nav{
+    position:absolute;
+    right:0;
+    z-index:3;
+}
+#menu ul{
+    font-size:0;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+#menu ul li{
+    border-bottom:1px solid #CCCCCC;
+    border-left:1px solid #CCCCCC;
+    display:inline-block;
+    margin:0;
+    padding:0;
+}
+#menu ul li a, #menu #submenu span{
+    background-color:#FFFFFF;
+    color:#666666;
+    display:block;
+    font-size:0.875rem;
+    padding:4px 10px;
+    text-decoration:none;
+    -webkit-transition: background .2s ease-in-out, color .2s ease-in-out;
+    -moz-transition: background .2s ease-in-out, color .2s ease-in-out;
+    -ms-transition: background .2s ease-in-out, color .2s ease-in-out;
+    -o-transition: background .2s ease-in-out, color .2s ease-in-out;
+    transition: background .2s ease-in-out, color .2s ease-in-out;
+}
+#menu ul li a:hover{
+    background-color:#EEEEEE;
+    color:#333333;
+}
+#menu ul li#generarpdf a:hover{
+    background-color:#99CC33;
+    color:#000000;
+}
+#menu ul li.menu_desactivado a{
+    background-color:#FFFFFF;
+    color:#CCCCCC;
+    pointer-events:none;
+}
+#menu ul li.menu_activado a{
+    pointer-events:auto;
+}
+
+
+
+#menu #submenu span{
+    cursor:pointer;
+    position:relative;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#menu #submenu ul{
+    border-top:1px solid #CCCCCC;
+    display:none;
+    position:absolute;
+    right:0;
+    width:auto;
+}
+#menu #submenu ul li{
+    display:block;
+    text-align:left;
+}
+#menu .menu_abierto span, #menu #submenu:hover span{
+    background-color:#666666 !important;
+    color:#FFFFFF !important;
+}
+#menu .menu_abierto ul{
+    display:block !important;
+}
+
+
+
+
+/* Pie ---------------------------------------------------------------------- */
+#pie{
+    bottom:20px;
+    color:#666666;
+    cursor:default;
+    display:block;
+    font-size:0.750em;
+    position:absolute;
+    right:20px;
+    text-align:right;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#pie a{
+    border-bottom:1px solid #CCCCCC;
+    color:#666666;
+    padding-bottom:1px;
+    text-decoration:none;
+    -webkit-transition: color .2s ease-in-out;
+    -moz-transition: color .2s ease-in-out;
+    -ms-transition: color .2s ease-in-out;
+    -o-transition: color .2s ease-in-out;
+    transition: color .2s ease-in-out;
+}
+#pie a:hover{
+    border-bottom-color:#FFFFFF;
+    color:#99CC33;
+}
+
+
+
+
+
+
+/* Ventanas ----------------------------------------------------------------- */
+#cboxContent{
+    background-color:#FFFFFF !important;
+    margin-top:0;
+}
+#cboxLoadedContent{
+    background-color:#FFFFFF !important;
+    border:1px solid #666666;
+}
+#cboxLoadingOverlay{
+    background-color:#FFFFFF !important;
+}
+#cboxClose{
+    right:1px;
+    top:1px;
+}
+#cboxClose:focus{
+    outline:none;
+}
+
+.ventana{
+    padding:40px;
+    text-align:center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+.ventana h2{
+    border-bottom:1px solid #CCCCCC;
+    display:block;
+    font-size:1.500em;
+    font-weight:400;
+    margin:0 0 30px 0;
+    padding:0 0 10px 0;
+}
+.ventana h3{
+    font-size:1em;
+    font-weight:700;
+    margin-top:30px;
+    text-align:left;
+}
+.ventana p{
+    font-size:1.125em;
+    margin:10px 0 0 0;
+}
+.ventana .botonera{
+    margin-top:40px;
+    text-align:center;
+}
+.ventana .botonera .boton:first-child{
+    margin-right:10px;
+}
+.ventana .boton{
+    background-color:#EEEEEE;
+    border:1px solid #999999;
+    cursor:pointer;
+    display:inline-block;
+    padding:2px 8px;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.ventana .boton:hover{
+    background-color:#999999;
+    color:#FFFFFF;
+}
+.ventana .boton_rojo:hover{
+    background-color:#ff0000;
+}
+.ventana p a{
+    border-bottom:1px solid #CCCCCC;
+    color:#000000;
+    padding-bottom:0;
+    text-decoration:none;
+    white-space:nowrap;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.ventana p a:hover{
+    border-bottom-color:#FFFFFF;
+    color:#99CC33;
+    text-decoration:none;
+}
+
+#info_ventana h3{
+    margin-top:40px;
+}
+#info_ventana p, #trabajopractico_ventana p{
+    font-size:1em;
+    text-align:left;
+}
+
+#info_ventana .info-licencia h3{
+    margin-bottom:12px;
+}
+#info_ventana .info-licencia p{
+    line-height:1.6;
+    margin-top:0;
+}
+#info_ventana .info-licencia a{
+    white-space:normal !important;
+}
+#info_ventana .info-licencia span.sincorte{
+    white-space:nowrap !important;
+}
+
+#info_ventana .info-recursos p.enlaces{
+    line-height:1.6;
+}
+
+
+
+
+
+
+@media print {
+    .figura svg{
+        -webkit-filter: none;
+        -moz-filter: none;
+        -ms-filter: none;
+        -o-filter: none;
+        filter: none;
+    }
+    .figura:after{
+        display:none;
+        visibility:hidden;
+    }
+}
+
