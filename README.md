@@ -1,4 +1,4 @@
-# Aplicación figuras: para trabajar Sensibilización a la forma y al ritmo
+# Aplicación figuras: para trabajar sensibilización a la forma y al ritmo
 Aplicación para desarrollar el sentido de ritmo y espaciado a través de figuras geométricas de peso óptico compensado.  
 El objetivo es componer un bloque de color homogéneo compuesto al menos de 4 líneas.
 
