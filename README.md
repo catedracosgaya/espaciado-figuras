@@ -4,6 +4,9 @@ El objetivo es componer un bloque de color homogéneo compuesto al menos de 4 l�
 
 **Versión: 2.5.0 - (04/04/2016)**
 
+## Aplicación en línea
+http://www.catedracosgaya.com.ar/espaciado/figuras/
+
 ## Créditos
 **Elaboración ejercicio:** Cuerpo docente de la Cátedra Cosgaya  
 **Desarrollo versión 2014:** Alejandro Sánchez Menéndez  
