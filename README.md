@@ -2,7 +2,10 @@
 Aplicación para desarrollar el sentido de ritmo y espaciado a través de figuras geométricas de peso óptico compensado.  
 El objetivo es componer un bloque de color homogéneo compuesto al menos de 4 líneas.
 
-**Versión: 2.5.0 - (04/04/2016)**
+**Versión: 2.6.0 - (06/04/2018)**
+
+## Aplicación en línea
+http://www.catedracosgaya.com.ar/espaciado/figuras/
 
 ## Aplicación en línea
 http://www.catedracosgaya.com.ar/espaciado/figuras/
@@ -20,7 +23,7 @@ Facebook: www.facebook.com/catedracosgaya
 Twitter: www.twitter.com/catedracosgaya  
 
 ##### Licencia de la aplicación
-[Está aplicación está disponible bajo la licencia MIT - Copyright (c) 2014-2016 Catedra Cosgaya.](LICENSE.md)
+[Está aplicación está disponible bajo la licencia MIT - Copyright (c) 2014-2018 Catedra Cosgaya.](LICENSE.md)
 
 ##### Licencia del trabajo práctico
 [Esta obra está bajo una licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional.](http://creativecommons.org/licenses/by-sa/4.0/deed.es)

@@ -8,6 +8,25 @@ $.removeCookie('tp_figuras_v220');
 var Cookie_Nombre = "tp_figuras_v250";
 
 
+/* localStorage borrar anteriores ------------------------------------------ */
+localStorage.removeItem('tp_figuras_v250');
+
+
+/* localStorage Nuevo Nombre ----------------------------------------------- */
+var localStorage_Nombre = "cc_ap_figuras_v260";
+
+
+/* localStorage detector --------------------------------------------------- */
+if (JSON.parse(localStorage.getItem(localStorage_Nombre)) === null || JSON.parse(localStorage.getItem(localStorage_Nombre)) === "" || JSON.parse(localStorage.getItem(localStorage_Nombre)) === "null" || JSON.parse(localStorage.getItem(localStorage_Nombre)) === undefined){
+	/* No localStorage */
+	var localStorageEstado = "no";
+} else {
+	var localStorageEstado = "si";
+}
+
+
+
+
 
 /* Detector de Internet Explorer ------------------------------------ */
 var Detector_IE = !!navigator.userAgent.match(/Trident/);
@@ -64,13 +83,17 @@ $(document).ready(function(){
 		var JS_hoja_Alto = Pantalla_Alto;
 	}
 
-	if ($.cookie('tp_figuras_ajuste') === null || $.cookie('tp_figuras_ajuste') === "" || $.cookie('tp_figuras_ajuste') === "null" || $.cookie('tp_figuras_ajuste') === undefined){
-			
+	var JS_hoja_Ancho = CSS_hoja_Ancho;
+	var JS_hoja_Alto = CSS_hoja_Alto;
+
+
+	// if ($.cookie('tp_figuras_ajuste') === null || $.cookie('tp_figuras_ajuste') === "" || $.cookie('tp_figuras_ajuste') === "null" || $.cookie('tp_figuras_ajuste') === undefined){
+	if ( localStorageEstado == "no" ){
 			// No cookie
 
 	} else {
 
-		$.removeCookie('tp_figuras_ajuste');
+		// $.removeCookie('tp_figuras_ajuste');
 
 		var coeficiente_normal = CSS_hoja_Ancho / JS_hoja_Ancho;
 		var coeficiente_ajuste = JS_hoja_Ancho / CSS_hoja_Ancho;
@@ -532,20 +555,42 @@ $(document).ready(function(){
 			$.cookie(Cookie_Nombre, attrArray, { expires: 365 });
 		});
 	}
-	cookieCrear();
+	// cookieCrear();
+
+	function localStorageCrear(){
+		$(".figura").bind( "mouseup", function() {
+			var attrArray = [];
+			for ( var i=1; i < $(".figura").length + 1; i++ ){
+				
+				var fig_id = "#fig_"+i;
+				var fig_top = $(fig_id).css("top");
+				var fig_left = $(fig_id).css("left");
+
+				var attr_sin_coma = attr_quitar_px(fig_top)+";"+attr_quitar_px(fig_left)+";"+$(fig_id).attr('data-rotacion');
+				attrArray.push({ id: $(fig_id).attr('id'), atributos: attr_sin_coma });
+			}
+
+			localStorage.removeItem(localStorage_Nombre);
+			localStorage.setItem(localStorage_Nombre, JSON.stringify(attrArray));
+		});
+	}
+	localStorageCrear();
 
 
 
+	// if ($.cookie(Cookie_Nombre) === null || $.cookie(Cookie_Nombre) === "" || $.cookie(Cookie_Nombre) === "null" || $.cookie(Cookie_Nombre) === undefined){
+	if ( localStorageEstado == "no" ){
 
-	if ($.cookie(Cookie_Nombre) === null || $.cookie(Cookie_Nombre) === "" || $.cookie(Cookie_Nombre) === "null" || $.cookie(Cookie_Nombre) === undefined){
-		
 		// No cookie
 
 	} else {
-		$.cookie.json = true;
-		var cookieArray = $.cookie(Cookie_Nombre);
+		// $.cookie.json = true;
+		// var cookieArray = $.cookie(Cookie_Nombre);
+		var cookieArray = JSON.parse(localStorage.getItem(localStorage_Nombre));
+		var localStorageAttrArray_length = cookieArray.length;
 
-		for (var i=0;i < $(".figura").length;i++){
+		// for (var i=0;i < $(".figura").length;i++){
+		for (var i=0; i<localStorageAttrArray_length; i++){
 			var fig_id = "#"+cookieArray[i]['id'];
 			var fig_attr_array = cookieArray[i]['atributos'].split(';');
 
@@ -607,7 +652,8 @@ $(document).ready(function(){
 
 		grupoBorrar();
 
-		$.removeCookie(Cookie_Nombre);
+		// $.removeCookie(Cookie_Nombre);
+		localStorage.removeItem(localStorage_Nombre);
 
 		$(".figura").each(function(){
 			if ($(this).hasClass("original") == false){
@@ -616,18 +662,19 @@ $(document).ready(function(){
 		});
 
 		inicio();
-		cookieCrear();
+		// cookieCrear();
+		localStorageCrear();
 	});
 
 
 
 	/* Ajuste Pantalla ---------------------------------------------- */
 	$('#ajustar_aceptar').click(function(event) {
-		event.preventDefault();
-		$.removeCookie(Cookie_Nombre);
-		$.removeCookie('tp_figuras_ajuste');
-		$.cookie('tp_figuras_ajuste', 'Ajuste Pantalla');
-	    location.reload();
+		// event.preventDefault();
+		// $.removeCookie(Cookie_Nombre);
+		// $.removeCookie('tp_figuras_ajuste');
+		// $.cookie('tp_figuras_ajuste', 'Ajuste Pantalla');
+		// location.reload();
 	});
 
 
